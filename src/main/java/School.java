@@ -7,8 +7,11 @@ public class School {
     private Date startDate;
     private String name;
 
-    private List<Course> myCourse;
+    public List<Course> myCourse;
 
+    public List<Course> getMyCourse() {
+        return null;
+    }
 
     public String getName() {
         return name;
@@ -33,7 +36,6 @@ public class School {
     }
 
     public void AddCourse(Course c) throws SchoolException {
-        if (myCourse.size()>0){
 
         for (Course item:myCourse) {
             if (item.getName().equals(c.getName())){
@@ -41,7 +43,16 @@ public class School {
             }
         }
         myCourse.add(c);
+
     }
+
+    public String GetCourseByName(String name){
+        for (Course item:myCourse) {
+            if (item.getName().equals(name)){
+                return item.getName();
+            }
+        }
+        return null;
     }
 
 
