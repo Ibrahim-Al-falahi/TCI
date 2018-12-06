@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.Objects;
 
 public class Course {
 
@@ -12,6 +13,21 @@ public class Course {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Course)) return false;
+        Course course = (Course) o;
+        return Objects.equals(name, course.name) &&
+                Objects.equals(startDate, course.startDate) &&
+                Objects.equals(endDate, course.endDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, startDate, endDate);
     }
 
     public Date getStratDate() {

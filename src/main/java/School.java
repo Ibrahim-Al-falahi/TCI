@@ -10,7 +10,7 @@ public class School {
     public List<Course> myCourse;
 
     public List<Course> getMyCourse() {
-        return null;
+        return myCourse;
     }
 
     public String getName() {

@@ -43,13 +43,14 @@ public class SchoolTest {
     }
 
     @Test
-    public void TestGetAllCourses(){
+    public void TestGetAllCourses() throws SchoolException {
         List<Course> courses=new ArrayList<>();
         School s=new School("fontys",new Date(12-12-2017));
 
         courses.add(new Course("math",new Date(01-01-2018), new Date(10-06-2018)));
+        s.AddCourse(new Course("math",new Date(01-01-2018), new Date(10-06-2018)));
 
-        assertEquals(courses,s.myCourse);
+        assertArrayEquals(s.myCourse.toArray(),courses.toArray());
     }
 
 
